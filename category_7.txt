@@ -1,0 +1,12 @@
+Movies
+In which year were the Academy Awards (The Oscars) first presented?,Which 90’S movie soundtrack is the Best-Selling Soundtrack of all time?,Which film was Disney’s first animated film to use computer graphics?,In which film did father and son actors Will And Jaden Smith,This movie about the story of a team of female African-American mathematicians,What is the name of the villainous teddy bear in Toy Story 3?,In The Hunger Games what District were Katniss and Peeta from?,'I'm the king of the world!' is a quote from which movie?,Gisaengchung is the original title of this South Korean film which collected,How many James Bond films have there been?
+ , , ,first appear together?,in NASA during the early years of the U.S. space program., , , ,four Oscars in 2020. What is the English title?, 
+1929,The Bodyguard,Snow White and the Seven Dwarfs,Space Jam,The Theory of Everything,Hugs-A-Lot,District 5,The Lion King,Knives Out,24
+1930,Titanic,The Rescuers Down Under,The Pursuit of Happyness,Temple Grandin,Lotso,District 12,The Lord of The Rings,Parasite,25
+1931,Forrest Gump,Beauty and the Beast,Men in Black,The Big Bang Theory,Paddy,District 9,Titanic,The Farewell,26
+1932,The Lion Kings,The Fox and the Hound,Karate Kid,Hidden Figures,Fitz-O,District 15,Terminator 2: Judgement Day,Waves,27
+A,A,D,B,D,B,B,C,B,C
+10,10,10,10,10,10,10,10,10,10
+B,B,A,A,B,A,C,A,C,A
+C,C,B,D,C,D,D,B,D,B
+It was in the end of 1920's,The actress was Whitney Houston,It's not about princess story.It's about the dog and his friend,Will Smith as Chris Gardner-a homeless salesman,They are Katherine Johnson-Mary Jackson and Dorothy Vaughan,His full name is Lots-o'-Huggin' Bear,The last district after District 11,Jack and Rose,It is an organism that lives on or in a host organism and gets its food from or at the expense of its host,The number of Alphabet

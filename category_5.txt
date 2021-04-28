@@ -1,0 +1,12 @@
+Personalities
+Which king was married to Eleanor of Aquitaine?,Anna Maria van Schurman became the first European woman,What is the name of the man who invented the car?,Famous for being the first solo female aviator to cross,Plato's student wasn't a man without questions.,Who was the first European to land in North America?,The Swedish scientist Alfred Nobel is most famous today for creating,Ampere is up there in the electromagnetism echelon.,Who invented the safety break which stopS elevators,Santaigo Ramony Cajal known as the 'Father of ..'
+ ,to do what?, ,the Atlantic. Who is this brave pilot?,Who is this student and teacher of philosophy?, ,the Nobel Prize. What invention made him rich?,What's his first name s'il vous plait?,from crashing?, 
+Henry I,Go to university,Henry Ford,Marie Curie,Aristotle,Ferdinand Magellan,Spam,Andre-Marie,Thomas Edison,Ornithology
+Henry II,Travel to Japan,Ferdinand Porsche,Harriet Quimby,Alexander the Great,Leif Erikson,Stainless steel,Pierre,Eli Whitney,Neuroscience
+Richard I,Climb Mount Everest,Karl Benz,Katharine Hepburn,Socrates,Marco Polo,Dynamite,Tycho,Henry Ford,Electricity
+Henry V,Go to space,Jacobus Spijker,Amelia Earhart,Leonardo da Vinci,Christopher Colombus,Dry ice,Fibonacci,Elisha Otis,Microbiology
+B,A,A,D,A,B,C,A,D,B
+10,10,10,10,10,10,10,10,10,10
+A,B,B,A,C,C,A,B,A,A
+C,C,D,C,D,D,D,D,C,D
+It’s not the 1st,High Education,American car brands,She was an American aviation pioneer and author,Archimides' Principle,He was a Norse explorer from Iceland,It is an explosive made of nitroglycerin sorbents (such as powdered shells or clay) and stabilizers,French name,Founder of the Otis Elevator Company,It is the scientific study of the nervous system

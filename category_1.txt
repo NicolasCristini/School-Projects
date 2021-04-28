@@ -1,0 +1,12 @@
+Physics
+Metrology is a scientific study in the field of:,Rutherford's alpha-particle scattering experiment on thin gold foil,Which one of the following colours of white light is least deviated,Name the scientist who first used a glass prism to obtain,Newton's first law of motion is known as:,Lumen is the unit for quantity:,The word "Physics" comes from the Greek word:,In SONAR which kind of wave is used?,Which physicists is the writer of the book 'A Brief History of Time'?,Heavy water is used in nuclear reactors to:
+ ,was responsible for the discovery of:,by the glass prism?,the spectrum of sunlight:, , , , , , 
+Weather forecast,Electron,Red,C. V. Raman,Gravity,Luminous flux,Phiji,Infrasonic,Isaac Newton,Slow down neutrons
+Transportation,Atomic nucleus,Green,S. Chandrashekhar,Conservation of momentum,Illuminance,Fusis,Ultrasonic,Albert Einstein,Absorb neutrons
+Measurement,Proton,Violet,Lord Rayleigh,Inertia,Luminous efficacy,Phusik,Radio,Hans Bethe,Increase temperature
+Urban planning,Neutron,Orange,Isaac Newton,Vertical motion,Luminous intensity,Fisika,Audible sound,Stephen Hawking,Increase speed of neutrons
+C,B,A,D,C,A,B,B,D,D
+10,10,10,10,10,10,10,10,10,10
+B,A,C,A,A,B,C,A,B,A
+D,C,D,B,D,D,D,D,C,C
+Metro means meter,It's in the centre,Are you angry?,He loves apple,A tendency to do nothing or to remain unchanged,Similar name of quantity as in magnetics,Nuclear fusion,The frequency is more than 20.000 Hz,Wheelchair,It's getting faster

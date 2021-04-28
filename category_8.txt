@@ -1,0 +1,12 @@
+Music
+Who did Queen perform a duet with on the "Under Pressure" single?,When translated what does 'Karaoke' mean?,Which song gave Madonna her first UK number one?,Which music legend won the Nobel Prize for literature in 2016?,What instrument is Albert Einstein best known for playing?,Which of these indicates pitch in musical notation?,Which of these refers to a singing style?,What word describes how high and how low a sound is?,What is the name of the Beatles’ first album?,When was the first debut of MTV?
+ , , , , , , , , , 
+Mick Jagger,Sing along,Music,Bob Dylan,Piano,Cliff,Baretto,Pitch,Abbey Road,1979
+David Bowie,No music,Like a Prayer,Elvis Presley,Trumpet,Clop,Falsetto,Amplitude,Please Please Me,1981
+George Michael,Music studio,Into the Groove,The Beatles,Cello,Cleave,Fumetto,Volume,Let it Be,1983
+Bono,Empty orchestra,Vogue,Michael Jackson,Violin,Clef,Farfallo,Altitude,Yellow Submarine,1985
+B,D,C,A,D,D,B,A,B,B
+10,10,10,10,10,10,10,10,10,10
+A,A,A,B,A,B,A,C,C,A
+D,C,B,C,C,C,C,D,D,D
+One of his song caled Rebel Rebel,No voice,The song consists of instrumentation from synthesizers and drum machines,He is  is an American singer-songwriter-author and visual artist,It is often called a fiddle-comes from "fedele"-from Old English fiðele-which is related to Old Norse fiðla,In French means 'Key',Italian diminutive of falso,It may be quantified as a frequency but pitch is not a purely objective physical property,It was released at 22 March 1963,In the beginning of 80's

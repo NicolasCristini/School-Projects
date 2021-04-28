@@ -1,0 +1,12 @@
+Chemistry
+Oxygen is absent in:,The gases responsible for acid rain are:,Electron emission from a metallic surface by application of light is known as:,The paste of a white material in water is used to maintain a fractured bone,Which among the following metals oxide provide amphoteric nature?,Which of the following elements is liquid at room temperature?,Who modified Bohr's theory by introducing elliptical orbits for electron path?,The chemical symbol of Mercury is:,The elements in the modern Periodic Table are arranged according to their:,In drinking water supply which of the following treatments is not involved?
+ , , ,fixed in place. The white material used is called:, , , , , , 
+Kerosene,SO2 and NO2,Thermionic emission,Bleaching powder,Sodium,Zinc,Hund,Ag,Mass number,Softening
+Glass,Ne and Ar,Photoelectric emission,Powder of zinc oxide,Silver,Lead,Sommerfeld,Hg,Atomic weight,Coagulation
+Soil,Ne and He,High field emission,Lime powder,Aluminium,Argon,Rutherford,Mg,Atomic number,Sedimentation
+Cement,H2 and He,Auto-electronic emission,Plaster of paris,Calcium,Bromine,Thomson,Mr,Neutron number,Disinfection
+A,A,B,D,C,D,B,B,C,A
+10,10,10,10,10,10,10,10,10,10
+B,B,A,B,A,A,A,C,A,C
+C,C,D,C,D,C,D,D,D,D
+Also known as paraffin,It contains oxygen,Phos in Greek means light,Heating gypsum which was mainly found in this city,Many metals (such as Zn-Al-Pb-Be) form amphoteric oxides or hydroxides,The only liquid elements at standard temperature and pressure are Br and Hg,His first name is Arnold,Hydrargyrum,For Oxygen it's 8,It is not to soften

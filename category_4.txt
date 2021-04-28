@@ -1,0 +1,12 @@
+Geography
+Duffle coats are named after a town in which country?,In what city was the first skyscrapper built?,The name of Utrecht in roman times was:,Amsterdam’s historic canal district was listed by UNESCO in which year?,Dutch explorers reached Van Diemen’s Land.,Holland means what in the ancient Dutch language?,What was the original name of Constantinople?,The Industrial Revolution began in which European country?,What system of education originated in Italy during,Which is the oldest university in Europe?
+ , , , ,What is its current name?, , , ,the 13th and 14th centuries?, 
+Germany,London,Overijssel,2000,Tasmania,Land of palm trees,New Rome,Belgium,Montessori Schools,University of Padua
+Holland,Chicago,Veluwe,2005,Java,Land of wood,Troy,Germany,Humanism,University of Salamanca
+Belgium,Rotterdam,Utrectium,2010,Australia,Land of swamps,Byzantium,Italy,Archaeology,University of Oxford
+Austria,Hong Kong,Traiectum,2015,New Zealand,Lowlands,Istanbul,Great Britain,Anthropology,University of Bologna
+C,B,D,C,A,B,C,D,B,D
+10,10,10,10,10,10,10,10,10,10
+B,A,A,B,B,A,B,B,A,A
+D,C,B,D,C,D,D,C,D,B
+It has an iconic building called Atomium in Brussels,It is not in Europe or Africa or Asia,Denoting its location at a possible Rhine crossing,It was 11 years ago,It is an island state of Australia,It's derived from the Old Dutch term holtlant,It's an ancient Greek city which now is the largest city in Turkey,It's Tea Time,It refers to refers to a perspective that affirms some notion of human freedom and progress,The city is also called Bolognese

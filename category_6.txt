@@ -1,0 +1,12 @@
+Art
+What artist is best known for a painting of his mother?,English artist Andy Brown created a portrait of Queen Elizabeth II,What artist's work has been stolen more than any other's?,What is the only work of art Michelangelo ever signed?,What is the movement in architecture in which buildings,How many paintings did Vincent Van Gogh sell during his lifetime?,What was the official diagnosis when van Gogh,How old is the earliest known human artwork?,What object commonly appears in Picasso's paintings?,How long did it take Leonardo Da Vinci to paint 
+ ,using what?, , ,have an organic amoeba-shaped form?, ,was hospitalized in 1888?, , ,the Mona Lisa's smile?
+Johannes Vermeer,Socks,Pablo Picasso,David,Blobism,None,Syphilis,1.84 million years old,Guitar,14 years
+James Abbott McNeil Whistler,Bubblegum,Leonardo Da Vinci,Sistine Chapel's ceiling,Fluxus,1,Anxiety and panic attacks,6000 million years old,Clock,14 months
+Pierre-Auguste Renoir,Tea bags,Rembrandt,The Last Judgement,Pointilism,10,Obsessive-Compulsive Disorder,27000 years old,The Sun,16 years
+Francisco Goya,Fish bones,Ecvard Munch,The Pieta,Googie Architecture,11,Acute mania with generalised delirium,100000 years old,Apple,16 months
+B,C,A,D,A,B,D,D,A,C
+10,10,10,10,10,10,10,10,10,10
+A,A,B,A,C,C,A,A,C,A
+C,D,D,C,D,D,C,C,D,B
+Have you ever watch Mr. Bean movie?,Because he loves tea,He is a Spanish painter,A sculpture of Virgin Mary,Also known as Blobitecture,How many "a" in name of Vincent Van Gogh?,It is not associated with a prior toxicity or physical illness or mental disorder,Earliest structures in the world (sandstone blocks set in a semi-circle with an oval foundation) built in Egypt,It's related to music,He spent four years upon it-left it unfinished. And he spent his 12 years over that smile itself.

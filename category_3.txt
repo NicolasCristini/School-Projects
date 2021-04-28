@@ -1,0 +1,12 @@
+Programming
+When was the word 'computer' first used?,In the field of computers VIRUS stands for:,The Python programming language was created by:,Which was the World's first successful electronic computer?,Which of the following is correct sequence of smallest to largest,Who built the first working programmable electro mechanical computer?,What is the most basic language Microsoft made?,Which of the following is considered the most complicated programming language?,Who invented the Graphical User Interface (GUI)?,When did the first x86 CPU come out?
+ , , , ,unit of storage size?, , , , , 
+1611,Very Intelligent Result Until Source,Guido van Rossum,PARAM,Petabyte/Kilobyte/Megabyte/Gigabyte/Terabyte,Konrad Zuse,C++,ActionScript,Apple,1982
+1612,Vital Information Resource Under Siege,James Gosling,CRAY-1,Kilobyte/Megabyte/Terabyte/Petabyte/Gigabyte,Laszlo Jozsef Biro,Visual Basic,C++,Microsoft,1978
+1613,Viral Important Record User Searched,Bjarne Stroustrup,PASCALINE,Megabyte/Terabyte/Gigabyte/Kilobyte/Petabyte,Brandenburg,DirectX,Visual Basic,Bell Labs,1990
+1614,Very Interchanged Resource Under Search,Rasmus Lerdorf,ENIAC,Kilobyte/Megabyte/Gigabyte/Terabyte/Petabyte,Karl Benz,.NET namespace,C#.NET,Xerox,1974
+C,B,A,D,D,A,B,B,D,B
+10,10,10,10,10,10,10,10,10,10
+A,A,B,A,A,B,C,C,A,A
+D,C,C,B,B,C,D,D,B,D
+It contains unlucky number,Steven Seagal as an ex-Navy SEAL in this movie,He was a dutch developer,Short for Electronic Numerical Integrator and Computer,MB = 10^6-PB = 10^15-GB = 10^9-KB = 10^3,He is a German civil engineer,It's so Basic,It's an extension of the C programming language,It sells print and digital document products and services,Your age is 43 if you born on that year
