@@ -1,13 +1,3 @@
-# Projects List
+# Happiness in the world
 
-Hi all, 
-here I wanted to share the projects I worked on during the last period.
-The projects (Python3 and R) shared in this repository are completely open to everyone. 
-I hope they could be usefull for your work or maybe just interesting. 
-Here the list: 
-1. Quizz game - GUESS WHAT?
-2. Matching pairs/groups - MISTERY COFFEE
-3. Storytelling notebook - EDUCATION IN THE NETHERLANDS
-4. Graphic User Interface - PATH FINDER
-5. Statistic with R - HAPPINESS IN THE WORLD
-6. Statistic with R - HEART DISEASE PREDICTION
+Here a Exploratory Data Analysis on a interesing dataset: The World Happiness Report (WHR) is a dataset that ranks 155 countries by their happiness level. The information included in the reports are used to guide the decision-making process that affects the civil society. Many expert across different and fields describe how the measurement about the well-being of the society can be use to drive the process of different nations. From this reports, it is possible to see how the state of happiness (or even the idea of this state) can change across the world depending on multiple factors. Moreover, it is insightful to see how the happiness score  can vary year after year.
