@@ -1,13 +1,7 @@
-# Projects List
+# Path Finder 
 
-Hi all, 
-here I wanted to share the projects I worked on during the last period.
-The projects (Python3 and R) shared in this repository are completely open to everyone. 
-I hope they could be usefull for your work or maybe just interesting. 
-Here the list: 
-1. Quizz game - GUESS WHAT?
-2. Matching pairs/groups - MISTERY COFFEE
-3. Storytelling notebook - EDUCATION IN THE NETHERLANDS
-4. Graphic User Interface - PATH FINDER
-5. Statistic with R - HAPPINESS IN THE WORLD
-6. Statistic with R - HEART DISEASE PREDICTION
+This app has been developed to practice with the object-oriented-programming and the graphical user intergace (GUI) on Tkinter. 
+The app consist of a simple game where you have to guess the maximal gain obtained by summing up the numbers showed in the cells of the grid. 
+You can try to guess the maximal gain before looking at the best path. You can also change the size of the grid to make it more difficult. 
+
+You'll find also an executable that doen't need to have python installed.
