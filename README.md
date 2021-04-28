@@ -1,4 +1,4 @@
-# projects
+# Projects List
 
 Hi all, 
 here I wanted to share the projects I worked on during the last period.
