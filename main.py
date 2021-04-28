@@ -2,7 +2,6 @@
 Created on Tue Feb 23 17:46:14 2021
 Latest version on Tue Mar 2 16:36:23 2021
 
-This is the code and main body for Project 1 of CoTaPP.
 
 The game is called "GUESS WHAT?", and is a quizz-type game 
 with multiple categories. We recommend you use Spyder 3.8 to
