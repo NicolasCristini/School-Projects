@@ -1,5 +1,5 @@
 # Quizz Game 
-GUESS WHAT
+GUESS WHAT?
 
 Run the main.py to play!
 The graphics.py contains all the graphic components and draws of the game (ASCII ART). 
