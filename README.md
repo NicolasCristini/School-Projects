@@ -2,7 +2,7 @@
 GUESS WHAT
 
 Run the main.py to play!
-The graphics.py contains all the graphic components and draws of the game. 
+The graphics.py contains all the graphic components and draws of the game (ASCII ART). 
 The .txt files contain the subcategory of the quizz: questions, right answer, help options. 
 The leaderboard.csv contain the record of the points gained by each players. You need to run the game in LOCAL so that the file can be write. 
 
