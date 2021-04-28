@@ -1,3 +1,5 @@
 # Happiness in the world
 
 Here a Exploratory Data Analysis on a interesing dataset: The World Happiness Report (WHR) is a dataset that ranks 155 countries by their happiness level. The information included in the reports are used to guide the decision-making process that affects the civil society. Many expert across different and fields describe how the measurement about the well-being of the society can be use to drive the process of different nations. From this reports, it is possible to see how the state of happiness (or even the idea of this state) can change across the world depending on multiple factors. Moreover, it is insightful to see how the happiness score  can vary year after year.
+
+We defined the happiest country in the world in the least five years. Moreover, we wanted to check which one was the country that most improved and most dis-improved its raking in this time-spam. Lastly, we wanted to understand which was the most relevant factor. Take a look at the notebook to see the results.   
