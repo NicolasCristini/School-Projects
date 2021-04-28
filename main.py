@@ -2,9 +2,7 @@
 """
 Created on Tue Mar 16 16:28:27 2021
 
-@authors: nicolascristini, Mark Sivolap, Ramon Jakobs
-Assignment: Project n.2  Mystery Coffee
-University of Utrecht Cotap
+@authors: Nicolas Cristini, Mark Sivolap, Ramon Jakobs
 """
 
 ### Import libraries
