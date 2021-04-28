@@ -1,0 +1,484 @@
+---
+title: "Happiness"
+author: "Team Opportunity"
+date: "11/26/2020"
+output: html_document
+---
+```{r import libraries}
+library(ISLR)
+library(ggrepel)
+library(tidyverse)
+library(nlme)
+library(reshape2)
+
+```
+
+```{r Report}
+#World Happiness Report Data-set Report
+
+#The World Happiness Report (WHR) ranks 155 countries by their happiness level. The first report has been published in 2012 and now it is globally recognized by governments and multiple organizations. The information included in the reports are used to guide the decision-making process that affects the civil society. Many expert across different fields describe how the measurement about the well-being of the society can be used to drive the progress of different nations. From this reports, it is possible to see how the state of happiness can change across the world depending on multiple factors. Moreover, it is insightful to see how the happiness score can vary year after year.
+
+#This dataset comprehend happiness scores and rankings based on the Gallup World Poll that aim to represents more than 98% of the world’s adult population. It is  “the most comprehensive and farthest-reaching survey of the word” consisting of more than 100 global questions and region-specific items in which the participants have to score their own life quality from 0 to 10. The columns in the data-set refers to six factors, picked as indicator of the happiness score: economic production (GDP per capita), social support (family), life expectancy (health), freedom, absence of corruption (trust in the government) and generosity.
+```
+
+```{r Import datasets}
+df15 <- read_csv("data/2015.csv")
+df16 <- read_csv("data/2016.csv")
+df17 <- read_csv("data/2017.csv")
+df18 <- read_csv("data/2018.csv")
+df19 <- read_csv("data/2019.csv")
+```
+
+```{r Improved/disimproved countries among years}
+# Extract necessary variables
+df15_rank <- df15[,c(1,3)]
+df16_rank <- df16[,c(1,3)]
+df17_rank <- df17[,c(1,2)]
+df18_rank <- df18[,c(2,1)]
+df19_rank <- df19[,c(2,1)]
+
+# Find the common countries between years
+countries <- intersect(df15_rank$Country, df16_rank$Country)
+countries <- intersect(countries, df17_rank$Country)
+countries <- intersect(countries, df18_rank$`Country or region`)
+countries <- intersect(countries, df19_rank$`Country or region`)
+
+# Extract the countries that are comparable between years
+df15_rank <- subset(df15_rank, Country %in% countries)
+df16_rank <- subset(df16_rank, Country %in% countries)
+df17_rank <- subset(df17_rank, Country %in% countries)
+df18_rank <- subset(df18_rank, `Country or region` %in% countries)
+df19_rank <- subset(df19_rank, `Country or region` %in% countries)
+
+# Sort in alphabetical order to join these dataset
+df15_rank <- df15_rank[order(df15_rank$Country),]
+df16_rank <- df16_rank[order(df16_rank$Country),]
+df17_rank <- df17_rank[order(df17_rank$Country),]
+df18_rank <- df18_rank[order(df18_rank$`Country or region`),]
+df19_rank <- df19_rank[order(df19_rank$`Country or region`),]
+
+# Join the dataset
+df_rank <- cbind(df15_rank, df16_rank, df17_rank, df18_rank, df19_rank)
+
+# Omit the country names
+df_rank <- df_rank[,c(1,2,4,6,8,10)]
+
+# Change the column names for better understanding
+names(df_rank) <- c("country","d2015","d2016","d2017","d2018","d2019")
+
+# Create a new column that shows the difference between 2019 and 2015
+df_rank$df1519 <- df_rank$d2015 - df_rank$d2019
+
+# Find the most improved country
+improved = df_rank[which.max(df_rank$df1519),]
+##BENIN goes up for 53 positions
+# Find the most disimproved country
+disimproved = df_rank[which.min(df_rank$df1519),]
+##VENEZUELA goes down for 85 positions
+```
+
+```{r Summary and Visualization of the happiness score }
+#import data sets, select only the happiness score, insert the variable year, rename the column Country
+df15_h <- df15 %>% select(1,4) %>% mutate(Year = "2015") %>% 
+  rename("Score" = "Happiness Score")
+df16_h <- df16 %>% select(1,4) %>% mutate(Year = "2016") %>% 
+  rename("Score" = "Happiness Score")
+df17_h <- df17 %>% select(1,3) %>% mutate(Year = "2017") %>% 
+  rename("Score" = "Happiness.Score")
+df18_h <- df18 %>% select(2,3) %>% mutate(Year = "2018") %>% 
+  rename("Country" = "Country or region") 
+df19_h <- df19 %>% select(2,3) %>% mutate(Year = "2019") %>% 
+  rename("Country" = "Country or region")
+
+#Select just the common countries and arrange in increasing order. I use the already produced list "countries"
+df15_h <- subset(df15_h, Country %in% countries)
+df16_h <- subset(df16_h, Country %in% countries) 
+df17_h <- subset(df17_h, Country %in% countries) 
+df18_h <- subset(df18_h, Country %in% countries) 
+df19_h <- subset(df19_h, Country %in% countries)
+
+#Compute the 5 five tables for the summary 
+sum_2015 <- data.frame(df15_h %>% 
+                    summarise(
+                      mean = mean(Score), 
+                      variance = var(Score), 
+                      min = min(Score), 
+                      max = max(Score)))
+
+sum_2016 <- data.frame(df15_h %>% 
+                    summarise(
+                      mean = mean(Score), 
+                      variance = var(Score), 
+                      min = min(Score), 
+                      max = max(Score)))
+
+sum_2017 <- data.frame(df15_h %>% 
+                    summarise(
+                      mean = mean(Score), 
+                      variance = var(Score), 
+                      min = min(Score), 
+                      max = max(Score)))
+
+sum_2018 <- data.frame(df15_h %>% 
+                    summarise(
+                      mean = mean(Score), 
+                      variance = var(Score), 
+                      min = min(Score), 
+                      max = max(Score)))
+
+sum_2019 <- data.frame(df15_h %>% 
+                    summarise(
+                      mean = mean(Score), 
+                      variance = var(Score), 
+                      min = min(Score), 
+                      max = max(Score)))
+
+#Summary 2015
+sum_2015
+
+#Summary 2016
+sum_2016
+
+#Summary 2017
+sum_2017
+#SUmmary 2018
+sum_2018
+
+#Summary2019
+sum_2019
+
+
+#Plots of the happines core of the 5 years 
+
+Bestof15 = ggplot(df15_h, aes( x = reorder(Country, +Score), y =  Score, label = Country, fill = Score > 6)) + 
+  geom_bar(stat = "identity", width = 0.5) +
+  theme_minimal() +
+  theme(axis.text.x=element_text(angle=90,hjust=1,vjust=0.5, size = 4.5)) +
+  labs(title = "Higher happines score for 2015", x = "Country") +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  theme(legend.position = "none") +
+  geom_label_repel(data = subset(df15_h, Country == "Switzerland"),
+                   segment.color = 'grey50',
+                   point.padding = 1, 
+                   label.padding = 0.3, 
+                   box.padding = 0.5
+                   )
+plot(Bestof15)
+
+Bestof16 = ggplot(df16_h, aes( x = reorder(Country, +Score), y =  Score, label = Country, fill = Score > 6)) + 
+  geom_bar(stat = "identity", width = 0.5) +
+  theme_minimal() +
+  theme(axis.text.x=element_text(angle=90,hjust=1,vjust=0.5, size = 4.5)) +
+  labs(title = "Higher happines score for 2016", x = "Country") +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  theme(legend.position = "none") +
+  geom_label_repel(data = subset(df16_h, Country == "Denmark"),
+                   segment.color = 'grey50',
+                   point.padding = 0.1, 
+                   label.padding = 0.3, 
+                   box.padding = 0.5)
+
+plot(Bestof16)
+
+
+Bestof17 = ggplot(df17_h, aes( x = reorder(Country, +Score), y =  Score, label = Country, fill = Score > 6)) + 
+  geom_bar(stat = "identity", width = 0.5) +
+  theme_minimal() +
+  theme(axis.text.x=element_text(angle=90,hjust=1, vjust=0.5, size = 4.5)) +
+  labs(title = "Higher happines score for 2017", x = "Country") +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  theme(legend.position = "none") +
+  geom_label_repel(data = subset(df16_h, Country == "Norway"),
+                   segment.color = 'grey50',
+                   point.padding = 0.1, 
+                   label.padding = 0.3, 
+                   box.padding = 0.5)
+plot(Bestof17)
+
+Bestof18 = ggplot(df18_h, aes( x = reorder(Country, +Score), y =  Score, label = Country, fill = Score > 6)) + 
+  geom_bar(stat = "identity", width = 0.5) +
+  theme_minimal() +
+  theme(axis.text.x=element_text(angle=90,hjust=1,vjust=0.5, size = 4.5)) +
+  labs(title = "Higher happines score for 2018", x = "Country") +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  theme(legend.position = "none") +
+  geom_label_repel(data = subset(df16_h, Country == "Finland"),
+                   segment.color = 'grey50',
+                   point.padding = 0.1, 
+                   label.padding = 0.3, 
+                   box.padding = 0.5)
+plot(Bestof18)
+
+Bestof19 = ggplot(df19_h, aes( x = reorder(Country, +Score), y =  Score, label = Country, fill = Score > 6)) + 
+  geom_bar(stat = "identity", width = 0.5) +
+  theme_minimal() +
+  theme(axis.text.x=element_text(angle=90,hjust=1,vjust=0.5, size = 4.5)) +
+  labs(title = "Higher happines score for 2019", x = "Country") +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  theme(legend.position = "none") +
+  geom_label_repel(data = subset(df16_h, Country == "Finland"),
+                   segment.color = 'grey50',
+                   point.padding = 0.1, 
+                   label.padding = 0.3, 
+                   box.padding = 0.5)
+plot(Bestof19)
+
+#Question: 
+#Which are the countries where the happiness score was high in the last 5 years? 
+
+df_happiness <- rbind(df15_h, df16_h, df17_h, df18_h, df19_h)
+
+tot_happiness = ggplot(df_happiness, aes(Country, Score, color= Year)) + 
+  geom_bar(stat = "identity", position = "stack") +
+  labs(title = "Total Happiness Score", x = "Country") + 
+  theme(plot.title = element_text(hjust = 0.5)) +
+  theme_minimal() +
+  theme(axis.text.x=element_text(angle=90,hjust=1, vjust=0.5, size = 4.5)) +
+  geom_hline( aes(yintercept = 35), colour = "brown4") +
+  geom_hline( aes(yintercept = 20), colour = "blue4")
+
+plot(tot_happiness)
+#We define 30 as the total score that represents happiness among the five years. It means score >6.5 over the 5 years. Over the this treeshold we can find the the 10% of the counties with the hifger freedom 
+
+#To obtain the names of the countries with total happiness score over 35 i must compute the sum of score a create a new column 
+df_tot_happiness <- cbind(df15_h, df16_h, df17_h, df18_h, df19_h)
+df_tot_happiness <- df_tot_happiness[, c(1,2,5,8,11,14)]
+df_tot_happiness <- mutate(df_tot_happiness, totscore = rowSums(df_tot_happiness[2:6]))
+best_countries <- filter(df_tot_happiness, df_tot_happiness$totscore > 35)
+Best_Countries <- c(best_countries$Country)
+
+#Countries with high happiness score among the last five years 
+Best_Countries
+
+#Which are the countries with the lowest happiness score? 
+worst_countries <- filter(df_tot_happiness, df_tot_happiness$totscore < 20)
+Worst_Countries <- c(worst_countries$Country)
+
+#Countries with low happiness score among the last five years 
+Worst_Countries
+
+
+```
+
+```{r Modeling for inference:finding the best predictors for happiness}
+#Predictoring which could be a potential "good" predictor for happiness score for every year
+
+#Rename
+
+names(df15)=c("Country","Region", "Rank","Score","std error", "Economy","Family","Health","Freedom","Trust","Generosity", "Dystopia.Residual")
+names(df16)=c("Country","Region", "Rank","Score","low CI", "high CI", "Economy","Family","Health","Freedom","Trust","Generosity","Dystopia.Residual")
+names(df17)=c("Country","Rank","Score","low CI", "high CI",  "Economy","Family","Health","Freedom","Trust","Generosity","Dystopia.Residual")
+names(df18)=c( "Rank","Country_or_region","Score","Economy","Family","Health","Freedom","Trust","Generosity","Dystopia.Residual")
+names(df19)=c("Rank","Country","Score", "Economy","Family","Health","Freedom","Trust","Generosity","Dystopia.Residual")
+
+
+#Reshape the data
+dat2_15 <- data.frame(df15[1:5], stack(df15[6:ncol(df15)]))
+dat2_16 <- data.frame(df16[1:6], stack(df16[7:ncol(df16)]))
+dat2_17 <- data.frame(df17[1:5], stack(df17[6:ncol(df17)]))
+dat2_18 <- data.frame(df18[1:3], stack(df18[4:ncol(df18)])) 
+dat2_19 <- data.frame(df19[1:3], stack(df19[4:ncol(df19)])) 
+
+#Rename the predictors
+names(dat2_15)[6:7]=c("Predictor_values","Predictor")
+names(dat2_16)[7:8]=c("Predictor_values","Predictor")
+names(dat2_17)[6:7]=c("Predictor_values","Predictor")
+names(dat2_18)[4:5]=c("Predictor_values","Predictor")
+names(dat2_19)[4:5]=c("Predictor_values","Predictor")
+
+
+#Remove useless coloumns
+dat2_15=dat2_15[!dat2_15$Predictor=="Dystopia.Residual",]
+dat2_16=dat2_16[!dat2_16$Predictor=="Dystopia.Residual",]
+dat2_17=dat2_17[!dat2_17$Predictor=="Dystopia.Residual",]
+dat2_18=dat2_18[!dat2_18$Predictor=="Dystopia.Residual",]
+dat2_19=dat2_19[!dat2_19$Predictor=="Dystopia.Residual",]
+
+#2018 values were not numbers...
+dat2_18=dat2_18 %>% 
+  mutate(Predictor_values=parse_number(Predictor_values)) %>% 
+  na.omit(dat2_18)
+
+
+#visualizing the best predictors for the happiness score in 2015
+ggplot(dat2_15)+
+  geom_point(aes(x=Predictor_values, y=Score, color=Country))+
+  geom_smooth(aes(x=Predictor_values, y=Score))+
+  theme_minimal()+
+  labs(x="Predictor_values", title = "Predictors for happiness in 2015")+
+  theme(legend.position = "none")+
+  facet_grid(~Predictor)
+
+
+
+#visualizing the best predictors for the happiness score in 2016
+ggplot(dat2_16)+
+  geom_point(aes(x=Predictor_values, y=Score, color=Country))+
+  geom_smooth(aes(x=Predictor_values, y=Score))+
+  theme_minimal()+
+  labs(x="Predictor_values", title = "Predictors for happiness in 2016")+
+  theme(legend.position = "none")+
+  facet_grid(~Predictor)
+
+
+#visualizing the best predictors for the happiness score in 2017
+
+
+
+
+ggplot(dat2_17)+
+  geom_point(aes(x=Predictor_values, y=Score, color=Country))+
+  geom_smooth(aes(x=Predictor_values, y=Score))+
+  theme_minimal()+
+  labs(x="Predictor_values", title = "Predictors for happiness in 2017")+
+  theme(legend.position = "none")+
+  facet_grid(~Predictor)
+
+
+#visualizing the best predictors for the happiness score in 2018
+
+
+
+ggplot(dat2_18)+
+  geom_point(aes(x=Predictor_values, y=Score, color=Country_or_region))+
+  geom_smooth(aes(x=Predictor_values, y=Score))+
+  theme_minimal()+
+  labs(x="Predictor_values", title = "Predictors for happiness in 2018")+
+  theme(legend.position = "none")+
+  facet_grid(~Predictor)
+
+#visualizing the best predictors for the happiness score in 201
+
+
+ggplot(dat2_19)+
+  geom_point(aes(x=Predictor_values, y=Score, color=Country))+
+  geom_smooth(aes(x=Predictor_values, y=Score))+
+  theme_minimal()+
+  labs(x="Predictor_values", title = "Predictors for happiness in 2019")+
+  theme(legend.position = "none")+
+  facet_grid(~Predictor)
+
+
+#Confirming the predictors by finding the linear function for each
+
+
+#linear models to find the relationships between predictors and happiness score
+lm_2015=nlme::lmList(Score~Predictor_values|Predictor, data=dat2_15)
+lm_2016=nlme::lmList(Score~Predictor_values|Predictor, data=dat2_16)
+lm_2017=nlme::lmList(Score~Predictor_values|Predictor, data=dat2_17)
+lm_2018=nlme::lmList(Score~Predictor_values|Predictor, data=dat2_18)
+lm_2019=nlme::lmList(Score~Predictor_values|Predictor, data=dat2_19)
+
+
+#Rename
+names(lm_2015)=c("Economy","Family","Health","Freedom","Trust","Generosity")
+names(lm_2016)=c("Economy","Family","Health","Freedom","Trust","Generosity")
+names(lm_2017)=c("Economy","Family","Health","Freedom","Trust","Generosity")
+names(lm_2018)=c("Economy","Family","Health","Freedom","Trust","Generosity")
+names(lm_2019)=c("Economy","Family","Health","Freedom","Trust","Generosity")
+
+
+
+
+#Create a dataframe containing intercept and slope for each predictor
+
+#2015
+coefficients_2015=rbind(lm_2015$Economy$coefficients, lm_2015$Family$coefficients, lm_2015$Health$coefficients,
+                        lm_2015$Freedom$coefficients, lm_2015$Trust$coefficients, lm_2015$Generosity$coefficients)
+coefficients_2015=cbind(coefficients_2015,c("Economy","Family","Health","Freedom","Trust","Generosity"))
+coefficients_2015=data.frame(coefficients_2015)
+colnames(coefficients_2015)=c("Intercept", "Slope", "Predictor" )
+coefficients_2015
+
+
+
+
+#2016
+coefficients_2016=rbind(lm_2016$Economy$coefficients, lm_2016$Family$coefficients, lm_2016$Health$coefficients,
+                        lm_2016$Freedom$coefficients, lm_2016$Trust$coefficients, lm_2016$Generosity$coefficients)
+coefficients_2016=cbind(coefficients_2016,c("Economy","Family","Health","Freedom","Trust","Generosity"))
+coefficients_2016=data.frame(coefficients_2016)
+colnames(coefficients_2016)=c("Intercept", "Slope", "Predictor" )
+coefficients_2016
+
+
+
+
+#2017
+coefficients_2017=rbind(lm_2017$Economy$coefficients, lm_2017$Family$coefficients, lm_2017$Health$coefficients,
+                        lm_2017$Freedom$coefficients, lm_2017$Trust$coefficients, lm_2017$Generosity$coefficients)
+coefficients_2017=cbind(coefficients_2017,c("Economy","Family","Health","Freedom","Trust","Generosity"))
+coefficients_2017=data.frame(coefficients_2017)
+colnames(coefficients_2017)=c("Intercept", "Slope", "Predictor" )
+coefficients_2017
+
+
+
+#2018
+coefficients_2018=rbind(lm_2018$Economy$coefficients, lm_2018$Family$coefficients, lm_2018$Health$coefficients,
+                        lm_2018$Freedom$coefficients, lm_2018$Trust$coefficients, lm_2018$Generosity$coefficients)
+coefficients_2018=cbind(coefficients_2018,c("Economy","Family","Health","Freedom","Trust","Generosity"))
+coefficients_2018=data.frame(coefficients_2018)
+colnames(coefficients_2018)=c("Intercept", "Slope", "Predictor" )
+coefficients_2018
+
+
+
+
+#2019
+coefficients_2019=rbind(lm_2019$Economy$coefficients, lm_2019$Family$coefficients, lm_2019$Health$coefficients,
+                        lm_2019$Freedom$coefficients, lm_2019$Trust$coefficients, lm_2019$Generosity$coefficients)
+coefficients_2019=cbind(coefficients_2019,c("Economy","Family","Health","Freedom","Trust","Generosity"))
+coefficients_2019=data.frame(coefficients_2019)
+colnames(coefficients_2019)=c("Intercept", "Slope", "Predictor" )
+coefficients_2019
+
+#placing all coefficients in a dataframe to plot the trend over the years
+
+coefficients=data.frame(coefficients_2015, coefficients_2016, coefficients_2017,
+                   coefficients_2018, coefficients_2019)
+coefficients=coefficients[-c(3,6,9,12)]
+colnames(coefficients)=c("Intercept_2015","Slope_2015",
+                      "Intercept_2016","Slope_2016",
+                      "Intercept_2017","Slope_2017",
+                      "Intercept_2018","Slope_2018",
+                      "Intercept_2019","Slope_2019",
+                      "Predictor")
+
+coefficients=coefficients %>% 
+  select(Slope_2015,Slope_2016,Slope_2017,
+                     Slope_2018,Slope_2019, Predictor)
+
+
+
+coefficients2 <- melt(coefficients, id.vars = "Predictor", measure.vars = c("Slope_2015",
+                                                                       "Slope_2016",
+                                                                        "Slope_2017",
+                                                                       "Slope_2018",
+                                                                       "Slope_2019"))
+colnames(coefficients2)=c("Predictor","Year","Slope")
+
+#Only way I found to make it work...
+coefficients2$Year=as.character(coefficients2$Year)
+coefficients2$Year=parse_number(coefficients2$Year)
+coefficients2$Slope=as.numeric(coefficients2$Slope)
+
+
+coefficients2
+
+#Plotting the coefficient trends
+ggplot(coefficients2, aes(x=Year, y=Slope, color=Predictor))+
+  geom_point()+
+  geom_line()+
+  labs(title="Trend of the predictor coefficients over the years")
+```
+
+```{r Explanation}
+#Whit this Exploratory Data Analysis (EDA) we tried to compare the happiness score of the different countries among the last five years (2015, 2016, 2017, 2018, 2019). Firstly, we decided to plot the happiness Ssore for each year to visualize which countries has been ranked "The happiest country in the world". Interestingly, the plots showed that the country with the happiest population were respectively, Switzerland, Denmark, Norway and Finland for the last two years. Then, by plotting the sum of the scores we wanted to define which were the countries with the total higher the lowest score. We decided that the 15 best countries [Switzerland, Iceland, Denmark, Norway, Canada, Finland, Netherland!, Sweden, New Zeland, Australia, Israel, Costa Rica, Austria, Mexico, United States] are the one above 35 point (that means scoring at least 6.5 every year) and that the 15 worst countries [Gabon, Niger, Cambodia, Tanzania, Chad, Guinea, Ivory Coast, Burkina Faso, Rwanda, Afghanistan, Syria, Benin, Syria, Burundi, Togo] are the one below 20 point (that means scoring less than 5 every year). 
+
+#Secondly, we wanted to define which countries improved more in the rank and which one dis-improved more. To compute that, we made the difference between the score of 2019 and 2015. The results show that the more improved country is Benin (up 53 position) and that the one which dis-improved more is Venezuela (down 85 positions). Interestingly, besides Benin is the most improved country in the last five years, it still places among the worst rated Countries. 
+
+#Thirdly, we tried to define which factor is the most relevant and impacting in defining the happiness score. To do that, we constructed a linear model for the six predictors. By looking at the slope value of the model, we defined that the two most relevant factors are family and freedom. Also, by plotting the trend of each predictor for the 5 years, it was possible to notice that the trend for some predictors was not equally powerful among the years, in particular Generosity and  like it happened with Google flu model. 
+
+```
+
