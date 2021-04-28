@@ -1,13 +1,4 @@
-# Projects List
-
-Hi all, 
-here I wanted to share the projects I worked on during the last period.
-The projects (Python3 and R) shared in this repository are completely open to everyone. 
-I hope they could be usefull for your work or maybe just interesting. 
-Here the list: 
-1. Quizz game - GUESS WHAT?
-2. Matching pairs/groups - MISTERY COFFEE
-3. Storytelling notebook - EDUCATION IN THE NETHERLANDS
-4. Graphic User Interface - PATH FINDER
-5. Statistic with R - HAPPINESS IN THE WORLD
-6. Statistic with R - HEART DISEASE PREDICTION
+# Heart Disease Prediction
+Here we tried to perform a prediction to study based on the data of Heart Disease Cleveland UCI (https://www.kaggle.com/cherngs/heart-disease-cleveland-uci)
+Based on the predictors listed in the Dataset, different prediction methods have been applied to predict the presence of heart disease for each individual under study. Exploratory Data Analysis and  Statistical analysis have been performed at the beginning of the study to get information about the dataset.
+Different methods have been used: LDA model, KNN3, KNN6, Logistic regression, Tree and Ramdom forest. In the end, the prediction methods are compared based on their accuracy. 
